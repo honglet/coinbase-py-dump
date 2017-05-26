@@ -25,6 +25,7 @@ def dumpDaily(date, data_dir, granularity):
     publicClient = GDAX.PublicClient();
     data_dir = os.path.expanduser(data_dir);
     for product in publicClient.getProducts():
+        time.sleep(1)
         product_id = product['id'];
         output_dir = data_dir + '/' + product_id
         if not os.path.exists(output_dir):
